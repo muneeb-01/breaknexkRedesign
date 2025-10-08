@@ -11,6 +11,8 @@ import {
 } from "react-icons/fa"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Lenis from 'lenis'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -61,7 +63,7 @@ const App = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const footerRef = useRef<HTMLDivElement | null>(null)
-
+  
   useEffect(() => {
     const section = sectionRef.current
 
@@ -99,6 +101,26 @@ const App = () => {
       trigger.kill()
     }
   })
+
+  
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.5, // Adjust smoothness
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
+      // smooth: true,
+      // smoothTouch: false,
+    });
+
+    const raf = (time:number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  });
 
   return (
     <>
