@@ -332,7 +332,7 @@ const App = () => {
               </div>
               <div
                 id="blur-right"
-                className="bg-gradient-to-r rounded-4xl from-[var(--color-paper-fg)] absolute z-0 left-[0] top-[0] h-full w-[20%]"
+                className="bg-gradient-to-r rounded-4xl from-[var(--color-paper-fg)] absolute z-0 left-[0] top-[0] h-full w-[30%]"
               ></div>
             </div>
           </div>
