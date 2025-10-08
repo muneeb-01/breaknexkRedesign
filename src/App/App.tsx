@@ -485,7 +485,7 @@ const App = () => {
               <div className="col-span-full h-px bg-[var(--color-secondary)]"></div>
             </div>
 
-            <div className="py-6 flex justify-between sm:text-[0.2em] items-center">
+            <div className="py-6 flex justify-between text-[0.7em] sm:text-[1em] items-center">
               <div>
               <p>© 2025 <a href="https://craftr-studio.vercel.app/">Craftr Studio</a></p>
               </div>
