@@ -487,7 +487,7 @@ const App = () => {
 
             <div className="py-6 flex justify-between items-center">
               <div>
-              <p>All Rights Reseved.</p>
+              <p>© 2025 <a href="https://craftr-studio.vercel.app/">Craftr Studio</a></p>
               </div>
               <div className="flex gap-4">
                 <p>Facebook</p>
