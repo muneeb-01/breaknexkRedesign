@@ -193,7 +193,7 @@ const App = () => {
         <div className="px-4">
           <div
             id="page1"
-            className="flex border-t-0 border h-[99vh] relative w-full justify-center items-center rounded-b-[var(--container-roundness)]"
+            className="flex border-t-0 border h-[93vh] sm:h-[99vh] relative w-full justify-center items-center rounded-b-[var(--container-roundness)]"
           >
             <div
               id="text-container"
@@ -345,8 +345,8 @@ const App = () => {
         >
           <div className="craftr4 text-4xl gap-[14vh] py-[12vh] flex flex-col justify-evenly items-center w-full">
             <div>
-              <p className="text-center ">
-                Collaborate with brands and agencies <br /> to create impactful
+              <p className="text-center px-6">
+                Collaborate with brands and agencies <br className="sm:flex hidden" /> to create impactful
                 results.
               </p>
             </div>
@@ -485,11 +485,11 @@ const App = () => {
               <div className="col-span-full h-px bg-[var(--color-secondary)]"></div>
             </div>
 
-            <div className="py-6 flex justify-between items-center">
+            <div className="py-6 flex justify-between sm:text-[0.2em] items-center">
               <div>
               <p>© 2025 <a href="https://craftr-studio.vercel.app/">Craftr Studio</a></p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row sm:gap-4">
                 <p>Facebook</p>
                 <p>LinkedIn</p>
                 <p>Instagram</p>
