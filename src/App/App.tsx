@@ -8,11 +8,12 @@ import {
   FaChevronDown,
   FaBars,
   FaTimes,
+  FaQuoteRight,
+  FaRegUser,
 } from "react-icons/fa"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import Lenis from 'lenis'
-
+import Lenis from "lenis"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -63,7 +64,7 @@ const App = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const footerRef = useRef<HTMLDivElement | null>(null)
-  
+
   useEffect(() => {
     const section = sectionRef.current
 
@@ -83,7 +84,7 @@ const App = () => {
     }
   })
 
-   useEffect(() => {
+  useEffect(() => {
     const footer = footerRef.current
 
     const trigger = ScrollTrigger.create({
@@ -102,25 +103,24 @@ const App = () => {
     }
   })
 
-  
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.5, // Adjust smoothness
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
       // smooth: true,
       // smoothTouch: false,
-    });
+    })
 
-    const raf = (time:number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
+    const raf = (time: number) => {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
 
     return () => {
-      lenis.destroy();
-    };
-  });
+      lenis.destroy()
+    }
+  })
 
   return (
     <>
@@ -223,7 +223,8 @@ const App = () => {
               <div id="page1-p" className="">
                 <p className="tracking-tight text-[var(--color-secondary)] px-6  text-center text-[0.8em] md:text-lg">
                   Unlock the Secret of Cost-Effective and Reliable Machine
-                  Modification and Automation Solutions! <br className="hidden sm:flex" /> Experts in Machine
+                  Modification and Automation Solutions!{" "}
+                  <br className="hidden sm:flex" /> Experts in Machine
                   Modification & Automation Solutions!
                 </p>
                 <div className="flex flex-wrap justify-center items-center gap-[clamp(0.3rem,1vw,0.75rem)] mt-[clamp(0.5rem,1vw,1rem)] text-center">
@@ -346,8 +347,8 @@ const App = () => {
           <div className="craftr4 text-4xl gap-[14vh] py-[12vh] flex flex-col justify-evenly items-center w-full">
             <div>
               <p className="text-center px-6">
-                Collaborate with brands and agencies <br className="sm:flex hidden" /> to create impactful
-                results.
+                Collaborate with brands and agencies{" "}
+                <br className="sm:flex hidden" /> to create impactful results.
               </p>
             </div>
             <div className="w-full flex justify-center items-center relative">
@@ -379,8 +380,8 @@ const App = () => {
 
         {/* Page 3 */}
 
-        <section>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3em] px-8 mx-auto">
+        <section className="">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3em] px-8  mx-auto">
             <div className="px-6 py-4 text-center rounded flex justify-between items-end">
               <button className="bg-[var(--color-paper)] absolute text-[var(--color-tertiary-fg)] text-lg text-nowrap px-6 py-4 font-light rounded-4xl ">
                 About Us
@@ -402,7 +403,7 @@ const App = () => {
             <div className="col-span-full my-4 h-px bg-[var(--color-secondary)]"></div>
 
             <div className="px-6 py-4 text-center rounded">
-              <h2 className="craftr3 font-medium text-left text-7xl pb-40">
+              <h2 className="craftr3 font-medium text-left text-7xl pb-24">
                 45000+
               </h2>
               <p className="text-3xl font-light text-left text-[var(--color-secondary)]">
@@ -412,7 +413,7 @@ const App = () => {
 
             {/* Box 2 */}
             <div className="px-6 py-4 text-center rounded">
-              <h2 className="craftr3 font-medium text-left text-7xl pb-40">
+              <h2 className="craftr3 font-medium text-left text-7xl pb-24">
                 120+
               </h2>
               <p className="text-3xl font-light text-left text-[var(--color-secondary)]">
@@ -425,7 +426,7 @@ const App = () => {
 
             {/* Box 3 */}
             <div className="px-6 py-4 text-center rounded">
-              <h2 className="craftr3 font-medium text-left text-7xl pb-40">
+              <h2 className="craftr3 font-medium text-left text-7xl pb-24">
                 75K+
               </h2>
               <p className="text-3xl font-light text-left text-[var(--color-secondary)]">
@@ -435,18 +436,107 @@ const App = () => {
 
             {/* Box 4 */}
             <div className="px-6 py-4 text-center rounded">
-              <h2 className="craftr3 font-medium text-left text-7xl pb-40">
+              <h2 className="craftr3 font-medium text-left text-7xl pb-24">
                 98%
               </h2>
               <p className="text-3xl font-light text-left text-[var(--color-secondary)]">
                 Satisfaction
               </p>
             </div>
+            <div className="col-span-full my-4 h-px bg-[var(--color-secondary)]"></div>
+          </div>
+        </section>
+
+        {/* Testimonial */}
+        <section className="py-[12vh] md:pr-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-6 sm:px-8 mx-auto max-w-[80%]">
+            {/* LEFT (Sticky Text) */}
+            <div className="lg:sticky lg:top-[10%] self-start">
+              <div className="px-4 sm:px-6 py-4 rounded">
+                <h2 className="craftr3 font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-left py-3">
+                  What Our <br className="hidden sm:flex" /> Customers Say
+                </h2>
+                <p className="craftr3 font-light text-[var(--color-secondary)] text-left text-sm sm:text-base">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Doloremque magni at pariatur eum vero repudiandae aliquid
+                  eligendi a architecto dolore rem reprehenderit ipsam tempore
+                  blanditiis incidunt amet excepturi. Harum, quibusdam!
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT (Testimonials) */}
+            <div className="flex flex-col gap-6">
+              {/* 1 - Right aligned */}
+              <div className="flex justify-end">
+                <div className="w-full sm:w-[80%] flex items-center gap-4 py-4 px-6 rounded-2xl border">
+                  <div className="h-12 flex justify-center items-center w-12 sm:h-24 sm:w-24 rounded-full overflow-hidden ">
+                    <FaRegUser className=" text-4xl md:text-6xl" />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="craftr4 text-xl sm:text-2xl font-semibold">
+                      Karl Banson
+                    </h2>
+                    <p className="text-sm sm:text-base">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Alias nesciunt maiores, laboriosam rerum voluptatem
+                      quaerat facere accusantium, culpa optio quia porro.
+                    </p>
+                  </div>
+                  <div className="hidden sm:flex text-2xl  h-full">
+                    <FaQuoteRight />
+                  </div>
+                </div>
+              </div>
+
+              {/* 2 - Left aligned */}
+              <div className="flex justify-start">
+                <div className="w-full sm:w-[80%] flex items-center gap-4 py-4 px-6 rounded-2xl border">
+                  <div className="h-12 flex justify-center items-center w-12 sm:h-24 sm:w-24 rounded-full overflow-hidden ">
+                    <FaRegUser className=" text-4xl md:text-6xl" />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="craftr4 text-xl sm:text-2xl font-semibold">
+                      Sarah Lee
+                    </h2>
+                    <p className="text-sm sm:text-base">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Alias nesciunt maiores, laboriosam rerum voluptatem
+                      quaerat facere accusantium, culpa optio quia porro.
+                    </p>
+                  </div>
+                  <div className="hidden sm:block text-2xl  h-full">
+                    <FaQuoteRight />
+                  </div>
+                </div>
+              </div>
+
+              {/* 3 - Right aligned */}
+              <div className="flex justify-end">
+                <div className="w-full sm:w-[80%] flex items-center gap-4 py-4 px-6 rounded-2xl border">
+                  <div className="h-12 flex justify-center items-center w-12 sm:h-24 sm:w-24 rounded-full overflow-hidden ">
+                    <FaRegUser className=" text-4xl md:text-6xl" />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="craftr4 text-xl sm:text-2xl font-semibold">
+                      John Carter
+                    </h2>
+                    <p className="text-sm sm:text-base">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Alias nesciunt maiores, laboriosam rerum voluptatem
+                      quaerat facere accusantium, culpa optio quia porro.
+                    </p>
+                  </div>
+                  <div className="hidden sm:block text-2xl  h-full">
+                    <FaQuoteRight />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* footer */}
-
         <footer ref={footerRef} className="pt-[11em] px-4">
           <div className="border rounded-t-[var(--container-roundness)] border-b-0 px-8 pt-[5em]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3em]  mx-auto">
@@ -487,7 +577,10 @@ const App = () => {
 
             <div className="py-6 flex justify-between text-[0.7em] sm:text-[1em] items-center">
               <div>
-              <p>© 2025 <a href="https://craftr-studio.vercel.app/">Craftr Studio</a></p>
+                <p>
+                  © 2025{" "}
+                  <a href="https://craftr-studio.vercel.app/">Craftr Studio</a>
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row sm:gap-4">
                 <p>Facebook</p>
